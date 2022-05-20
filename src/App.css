@@ -40,3 +40,14 @@
   background-color: #eed4ac;
 }
 
+.selected {
+  background-color: rgb(189, 76, 76);
+}
+
+.available {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: rgb(24, 189, 24);
+}
+
