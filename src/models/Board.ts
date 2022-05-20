@@ -1,6 +1,7 @@
 import { Cell } from "./Cell";
 import { Colors } from "./Colors";
 import { Bishop } from "./figures/Bishop";
+import { Figure } from "./figures/Figure";
 import { King } from "./figures/King";
 import { Knight } from "./figures/Knight";
 import { Pawn } from "./figures/Pawn";
@@ -11,6 +12,8 @@ const BOARDSIZE = 8;
 
 export class Board {
   cells: Cell[][] = [];
+  lostBlackFigures: Figure[] = [];
+  lostWhiteFigures: Figure[] = [];
 
 
   //TODO: following function contains circle dependency which is better to be avoided
@@ -42,6 +45,8 @@ export class Board {
   public getCopyBoard(): Board {
     const newBoard = new Board();
     newBoard.cells = this.cells;
+    newBoard.lostWhiteFigures = this.lostWhiteFigures;
+    newBoard.lostBlackFigures = this.lostBlackFigures;
     return newBoard;
   }
 

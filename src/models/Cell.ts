@@ -81,10 +81,18 @@ export class Cell {
     this.figure = figure;
     this.figure.cell = this;
   }
+  //would be better to put addLostFigure to BoardComponent
+  addLostFigure(figure: Figure): void {
+    figure.color === Colors.BLACK ? this.board.lostBlackFigures.push(figure) : this.board.lostWhiteFigures.push(figure);
+  }
 
   moveFigure(target: Cell) {
     if(this.figure && this.figure?.canMove(target)) {
       this.figure.moveFigure(target);
+      //check if there's a enemy figure on target cell
+      if(target.figure) {
+        this.addLostFigure(target.figure);
+      }
       target.setFigure(this.figure);
       this.figure = null;
     }

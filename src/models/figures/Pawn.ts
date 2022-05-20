@@ -24,11 +24,10 @@ export class Pawn extends Figure {
         //check if bias is for 1 or 2 if this is a first step, check that step is made 
         //on same x-dir and target cell is empty
 
-        // eslint-disable-next-line no-mixed-operators
         if ((target.y === this.cell.y + direction || this.isFirstStep
-            // eslint-disable-next-line no-mixed-operators
             && (target.y === this.cell.y + firstStepDirection))
-            && target.x === this.cell.x && this.cell.board.getCell(target.x, target.y).isEmpty()) {
+            && target.x === this.cell.x
+            && this.cell.board.getCell(target.x, target.y).isEmpty()) {
             return true;
         }
         //diagonal pawn attack
