@@ -8,7 +8,7 @@ export class Cell {
   readonly color: Colors;
   figure: Figure | null;
   board: Board;
-  available: boolean; // true if available to got to
+  available: boolean; // true if available to go to
   id: number; // for react keys
 
   constructor(board: Board, x: number, y: number, color: Colors, figure: Figure | null) {
