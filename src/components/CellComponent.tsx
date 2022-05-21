@@ -14,7 +14,7 @@ const CellComponent: React.FC<CellProps> = ({ cell, selected, click }) => {
     style={{ background: cell.available && cell.figure ? 'green' : ''}} //TODO: refactor inline style, inline style is evil
     >
       {cell.available && !cell.figure && <div className={"available"}></div>}
-      {cell.figure?.logo && <img src={cell.figure.logo}/>}
+      {cell.figure?.logo && <img src={cell.figure.logo} alt=""/>}
     </div>
   );
 };

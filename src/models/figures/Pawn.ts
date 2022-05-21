@@ -5,9 +5,7 @@ import blackLogo from '../../assets/black-pawn.png'
 import whiteLogo from '../../assets/white-pawn.png'
 
 export class Pawn extends Figure {
-
     isFirstStep: boolean = true;
-
     constructor(color: Colors, cell: Cell) {
         super(color, cell);
         this.logo = color === Colors.BLACK ? blackLogo : whiteLogo;
@@ -15,11 +13,10 @@ export class Pawn extends Figure {
     }
 
     canMove(target: Cell): boolean {
-        if (!super.canMove(target)) {
+        if (!super.canMove(target))
             return false;
-        }
-        const direction = this.cell.figure?.color === Colors.BLACK ? 1 : -1; //whites are stepping up, blacks down
-        const firstStepDirection = this.cell.figure?.color === Colors.BLACK ? 2 : -2;
+        const direction = this.cell.figure?.color === Colors.BLACK ? 1 : -1
+        const firstStepDirection = this.cell.figure?.color === Colors.BLACK ? 2 : -2
 
         //check if bias is for 1 or 2 if this is a first step, check that step is made 
         //on same x-dir and target cell is empty
